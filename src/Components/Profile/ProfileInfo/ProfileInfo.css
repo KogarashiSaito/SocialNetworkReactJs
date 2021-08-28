@@ -1,0 +1,21 @@
+.content__img-header {
+    width: 100%;
+}
+
+.content__profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: azure;
+}
+
+.profile__logo {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.content__profile{
+    padding: 10px;
+}
