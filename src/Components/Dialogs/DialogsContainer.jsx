@@ -3,31 +3,6 @@ import { connect } from "react-redux";
 import { sendMessageCreator, updateNewMessageBodyCreator } from "../../redux/dialogsReducer";
 import Dialogs from "./Dialogs";
 
-// const DialogsContainer = () => {
-//     return (
-//         <StoreContext.Consumer>
-//             {
-//                 (store) => {
-//                     let onMessageClick = () => {
-//                         store.dispatch(sendMessageCreator())
-//                     }
-
-//                     let onMessageChange = (body) => {
-//                         store.dispatch(updateNewMessageBodyCreator(body))
-//                     }
-
-//                     return (
-//                         <Dialogs
-//                             updateNewMessageBody={onMessageChange}
-//                             sendMessage={onMessageClick}
-//                             dialogsPage={state} />
-//                     )
-//                 }
-//             }
-//         </StoreContext.Consumer>
-//     )
-// }
-
 let mapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage,
@@ -36,11 +11,11 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        updateNewMessageBody: () => {
-            dispatch(sendMessageCreator())
-        },
-        sendMessage: (body) => {
+        updateNewMessageBody: (body) => {
             dispatch(updateNewMessageBodyCreator(body))
+        },
+        sendMessage: () => {
+            dispatch(sendMessageCreator())
         }
     }
 }
